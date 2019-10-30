@@ -21,6 +21,6 @@ export class FestivalsService {
      return festivalJSON;
   }
   get_API_Records() {
-    return this.httpclient.get('http://eacodingtest.digital.energyaustralia.com.au/api/v1/festivals');
+    // return this.httpclient.get('http://eacodingtest.digital.energyaustralia.com.au/api/v1/festivals');
   }
 }
