@@ -1,21 +1,133 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
-</div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
+<!-- <table *ngFor="let musiclist of records.labelRecords  | groupBy:'labelName'">
+  <tbody>
+    <br>
+    <span><b>RecordLabel:</b></span>
+    <br>
+    <tr>
+      <td>{{musiclist.key}}</td>
+    </tr>
 
+    <b>Bands:</b>
+    <br>
+    <tr *ngFor="let bands of musiclist.value">
+      <span>
+        <td>{{bands.band}}</td>
+      </span>
+      <br>
+    </tr>
+
+
+    <b>Festivals:</b>
+    <br>
+    <tr *ngFor="let bands of musiclist.value">
+      <span>
+        <td>{{bands.festival}}</td>
+      </span>
+      <br>
+    </tr>
+
+  </tbody>
+</table> -->
+
+
+
+
+<!-- <table>
+    <u>Records Label:
+        <u>
+            <li  *ngFor="let musiclist of records.labelRecords  | groupBy:'labelName'">
+                <ul>
+                    <li>{{musiclist.key}}</li>
+
+                </ul>
+            </u>
+            <li>Vegetables
+                <ul>
+                    <li>Carrots</li>
+                </ul>
+            </li>
+        </u>
+      </u>
+</table> -->
+
+<!-- <ul>
+  <li><span><b>Records Label</b></span></li>
+  <ul>
+    <li *ngFor="let musiclist of records.labelRecords  | groupBy:'labelName'">
+      {{musiclist.key}}
+    </li>
+    <li><span><b>Bands:</b></span></li>
+    <ul>
+      <li *ngFor="let bands of musiclist.value>
+      </ul> -->
+ <!-- <ul>
+  <li *ngFor="let musiclist of records.labelRecords  | groupBy:'labelName'| orderBy: 'labelName'">
+    <ul>
+      <span>
+        <li><b>Records Label:</b></li>
+      </span>
+      <li>
+        {{musiclist.key}}
+      </li>
+      <li><span><b>Bands:</b></span></li>
+      <ul *ngFor="let bands of musiclist.value">
+        <li>
+          {{bands.band}}
+        </li>
+        <li><span><b>Festivals:</b></span></li>
+        <ul *ngFor="let bands of musiclist.value">
+          <li>
+            {{bands.festival}}
+          </li>
+        </ul>
+      </ul>
+    </ul>
+</ul> -->
+
+
+
+<!-- <ul>
+    <li><span><b>Records Label:</b></span></li>
+    <ul *ngFor="let musiclist of records.labelRecords  | groupBy:'labelName'">
+      <li>
+        {{musiclist.key}}
+      </li>
+        <li><span><b>Bands:</b></span></li>
+        <ul *ngFor="let bands of musiclist.value">
+          <li>
+            {{bands.band}}
+          </li>
+          <li><span><b>Festivals:</b></span></li>
+          <ul *ngFor="let bands of musiclist.value">
+            <li>
+              {{bands.festival}}
+            </li>
+          </ul>
+        </ul>
+      </ul>
+  </ul> -->
+
+
+
+ <ul>
+
+  <ul *ngFor="let musiclist of records.labelRecords  | groupBy:'labelName'">
+      <li><span><b>Records Label: {{musiclist.key}}</b></span></li>
+    <li><span><b>Bands:</b></span>
+      <ul>
+        <li *ngFor="let bands of musiclist.value | orderBy" >
+          {{bands.band}}
+        </li>
+      </ul>
+    </li>
+
+        <li><span><b>Festivals:</b></span>
+          <ul *ngFor="let festivals of musiclist.value ">
+            <li>
+              {{festivals.festival}}
+            </li>
+          </ul>
+        </li>
+        <u>---------------</u>
+</ul>
 <router-outlet></router-outlet>
