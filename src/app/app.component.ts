@@ -27,21 +27,8 @@ constructor(private festivalserviceapi: FestivalsService) {
   }
 ngOnInit() {
    this.prepareLabelCollection();
-    // this.get_records();
+   this.get_records();
   }
-
-  // get_records() {
-  //   this.festivalserviceapi.get_API_Records()
-  //     .subscribe
-  //     (
-  //       data => {
-  //        this.labelCollection = data;
-  //        console.log(data);
-  //       }
-  //     );
-
-
-
 
 prepareLabelCollection() {
   this.festivCollection = this.festivalserviceapi.get_API_Festivals();
@@ -56,10 +43,21 @@ prepareLabelCollection() {
           });
   }
 }
+}
+
+get_records() {
+  this.festivalserviceapi.get_API_Records()
+    .subscribe
+    (
+      data => {
+       this.labelCollection = data;
+       console.log(data);
+      }
+    );
+
 // Now sort records in a tree structure
   this.records.labelRecords.sort();
   console.log(this.records.labelRecords);
   return this.records.labelRecords;
   }
 }
-
